@@ -2,62 +2,49 @@
     session_start();
 
     require_once("server.php");
+    require_once("patterns.php");
     require_once('db_get.php');
     require_once('errors.php');
 
-    $db = mysqli_connect('127.0.0.1', 'root', '','mybank');
-    $OK = $_SESSION['username'];
-
-
 
     function transfer_form(){
-        global $TRANSFER_FORM, $db;
+        $db = mysqli_connect('127.0.0.1', 'root', '','mybank');
+        global $TRANSFER_FORM;
+
         $data = getColumnsByUsername($db, $_SESSION['username'],["username","amount"]);
         $account = $data[0];
         $amount = sprintf("%.2f", floatval($data[1]));
 
+        $db->close();
+
         return (string)str_replace(["{{ERRORS}}","{{ACCOUNT}}","{{AMOUNT}}"],[getErrors(),$account,$amount],$TRANSFER_FORM);
     }
 
+    function verification(){
+        global $VERIFICATION;
+
+        return (string)str_replace(["{{SENDER}}","{{RECEIVER}}","{{TITLE}}","{{AMOUNT}}"],
+                                   [$_SESSION['username'], $_POST['receiver'],$_POST['title'],$_POST['amount']],
+                                    $VERIFICATION);
+    }
+
+    function confirmation(){
+        global $CONFIRMATION,$COMPLETE_TRANSACTION,$errors;
+
+        if (count($errors) > 0){
+            $CONFIRMATION = (string)str_replace("{{MSG}}",getErrors(),$CONFIRMATION);
+        }
+        else{
+            $CONFIRMATION = (string)str_replace("{{MSG}}",$COMPLETE_TRANSACTION,$CONFIRMATION);
+        }
 
 
-$TRANSFER_FORM=<<<EOT
-<div class="header">
-    <h2>Wyślij przelew</h2>
-</div>
+        return (string)str_replace(["{{SENDER}}","{{RECEIVER}}","{{TITLE}}","{{AMOUNT}}"],
+                                   [$_SESSION['username'], $_POST['receiver'],$_POST['title'],$_POST['amount']],
+                                    $CONFIRMATION);
+    }
 
-<form method="post" action="confirm.php">
-    
-    {{ERRORS}}
-    
-    <div class="input-group">
-        <label>Twój razhunek</label>
-        <p>{{ACCOUNT}} : {{AMOUNT}} PLN</p>
-    </div>
-    <div class="input-group">
-        <label>Imię odbiorcy</label>
-        <input type="text" name="receiver" required>
-    </div>
-    <div class="input-group">
-        <label>Tytułem</label>
-        <input type="text" name="title" required>
-    </div>
-    
-    <div class="input-group">
-        <label>Kwota</label>
-        <input type="number" name="amount" step="0.01" placeholder= "0.00" required>
-    </div>
 
-    <div class="input-group">
-        <label>Potwierdź hasło</label>
-        <input type="password" name="password" required>
-    </div>
-    
-    <div class="input-group">
-        <button type="submit" class="btn" name="transfer">Wyślij</button>
-    </div>
-</form>
-EOT
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +57,16 @@ EOT
 
 <?php
 
-if ($OK){
+if (isset($_POST['verify'])){
+    ECHO verification();
+    unset($_POST['verify']);
+}
+else if(isset($_POST['transfer'])){
+
+    ECHO confirmation();
+    unset($_POST['transfer']);
+}
+else if(isset($_SESSION['username'])){
     ECHO transfer_form();
 }else{
     ECHO "PLEASE, LOG IN";

@@ -10,15 +10,17 @@ require_once('server.php');
 <head>
     <title>Registration system PHP and MySQL</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script >
 </head>
 <body>
 
 <div class="header">
-    <h2>History</h2>
+    <h2>Historia</h2>
 </div>
 
+<div class="content">
 <?php ECHO getHistory()?>
-
+</div>
 
 </body>
 </html>

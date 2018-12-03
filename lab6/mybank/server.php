@@ -88,6 +88,8 @@
 	}
 
 
+    // TRANSFER
+
     if (isset($_POST['transfer'])) {
         $sender = $_SESSION['username'];
         $receiver= mysqli_real_escape_string($db, $_POST['receiver']);
@@ -95,42 +97,20 @@
         $amount = mysqli_real_escape_string($db, $_POST['amount']);
         $password = mysqli_real_escape_string($db, $_POST['password']);
 
-        if (empty($sender)) {
-            array_push($errors, "Username is required");
-        }
-        if (empty($receiver)) {
-            array_push($errors, "Receiver is required");
-        }
-        if (empty($title)) {
-            array_push($errors, "Title is required");
-        }
-        if (empty($amount)) {
-            array_push($errors, "Amount is required");
-        }
-        if (empty($password)) {
-            array_push($errors, "Password is required");
-        }
-
-        if (count($errors) == 0) {
-
-            $password = md5($password);
-            $result = getColumnsByUsername($db, $sender, ["amount"])[0];
-
-            $stmt = $db->prepare("call transfer(?,?,?,?,?)");
-            $stmt->bind_param('sssds',$sender,$receiver,$title,$amount,$password);
-
-            $stmt->execute();
-
-            $result = $result - getColumnsByUsername($db, $sender, ["amount"])[0];
-
-            if ($result == 0){
-                array_push($errors, "Fail transfer");
-            }
-            else{
-                array_push($errors, "Complete transfer");
-            }
 
 
+        $password = md5($password);
+        $result = getColumnsByUsername($db, $sender, ["amount"])[0];
+
+        $stmt = $db->prepare("call transfer(?,?,?,?,?)");
+        $stmt->bind_param('sssds',$sender,$receiver,$title,$amount,$password);
+
+        $stmt->execute();
+
+        $result = $result - getColumnsByUsername($db, $sender, ["amount"])[0];
+
+        if ($result == 0){
+            array_push($errors, "Transakcja nie powiodła się");
         }
     }
 
