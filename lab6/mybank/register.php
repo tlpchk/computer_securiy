@@ -41,12 +41,12 @@ function register_form(){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration system PHP and MySQL</title>
+	<title>RegistrationL</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div class="header">
-		<h2>Register</h2>
+		<h2>Registration</h2>
 	</div>
 
     <?php ECHO register_form(); ?>

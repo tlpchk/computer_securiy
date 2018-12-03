@@ -115,6 +115,7 @@
     }
 
     function getHistory(){
+
         global $HISTORY,$TR;
 
 
@@ -157,11 +158,11 @@ $HISTORY=<<<END
 <table>
 	<thead>
 		<tr>
-			<th>Odprawca</th>
-			<th>Odbiorca</th>
-			<th>Tytuł</th>
-			<th>Data</th>
-			<th>Kwota</th>
+			<th>Sender</th>
+			<th>Receiver</th>
+			<th>Title</th>
+			<th>Date</th>
+			<th>Amount</th>
 		</tr>
 	</thead>
 	</tbody>

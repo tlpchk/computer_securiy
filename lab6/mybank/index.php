@@ -30,7 +30,7 @@
 
 		<?php  if (isset($_SESSION['username'])) :
             ECHO getErrors();?>
-			<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+			<h1>Welcome, <strong><?php echo $_SESSION['username']; ?></strong></h1>
 			<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
 		<?php endif ?>
 	</div>

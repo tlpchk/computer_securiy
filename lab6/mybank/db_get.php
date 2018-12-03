@@ -24,8 +24,6 @@ function getColumnsByUsername($db, $username, $columns){
         foreach($columns as $column) {
             $data []= $row["$column"];
         }
-    }else {
-        array_push($errors, "ADMIN: do username unique");
     }
     return $data;
 }

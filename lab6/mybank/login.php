@@ -4,8 +4,12 @@ require_once("errors.php");
 
 
 $LOGIN_FORM=<<<EOT
-<form method="post" action="login.php">
+ <div class="header">
+        <h2>Your bank</h2>
+    </div>
     
+<form method="post" action="login.php">
+   
     {{ERRORS}}
     
     <div class="input-group">
@@ -35,14 +39,11 @@ function login_form(){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration system PHP and MySQL</title>
+    <title>Log In</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-<div class="header">
-    <h2>Login</h2>
-</div>
 
 <?php ECHO login_form()?>
 
