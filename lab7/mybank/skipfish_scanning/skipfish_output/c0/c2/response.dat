@@ -1,0 +1,31 @@
+HTTP/1.1 200 OK
+Host: 127.0.0.1:8000
+Date: Sun, 09 Dec 2018 22:17:25 +0100
+Connection: close
+X-Powered-By: PHP/7.2.10-0ubuntu0.18.04.1
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="header">
+		<h2>Home Page</h2>
+	</div>
+	<div class="content">
+
+		<a href = "transfer.php">Make transfer</a>
+        <a href = "history.php">History</a>
+
+					<h1>Welcome, <strong>c</strong></h1>
+			<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+			</div>
+
+</body>
+</html>

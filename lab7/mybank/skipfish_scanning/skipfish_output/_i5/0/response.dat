@@ -1,0 +1,8 @@
+HTTP/1.1 302 Found
+Host: 127.0.0.1:8000
+Date: Sun, 09 Dec 2018 21:55:05 +0100
+Connection: close
+X-Powered-By: PHP/7.2.10-0ubuntu0.18.04.1
+Set-Cookie: PHPSESSID=a225abh26b0qgdae5j98o5e2gb; path=/
+
+[...truncated...]

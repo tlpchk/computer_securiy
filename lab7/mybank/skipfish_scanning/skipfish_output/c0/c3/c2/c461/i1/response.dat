@@ -1,0 +1,51 @@
+HTTP/1.1 200 OK
+Host: 127.0.0.1:8000
+Date: Sun, 09 Dec 2018 22:18:38 +0100
+Connection: close
+X-Powered-By: PHP/7.2.10-0ubuntu0.18.04.1
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Content-type: text/html; charset=UTF-8
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log In</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+ <div class="header">
+        <h2>Your bank</h2>
+    </div>
+    
+<form method="post" action="login.php">
+   
+    <div class="error">
+<p>Wrong username/password combination</p>
+</div>
+
+    
+    <div class="input-group">
+        <label>Username</label>
+        <input type="text" name="username" >
+    </div>
+    <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password">
+    </div>
+    <div class="input-group">
+        <button type="submit" class="btn" name="login_user">Login</button>
+    </div>
+    <p>
+        Not yet a member? <a href="register.php">Sign up</a>
+    </p>
+</form>
+
+</body>
+</html>
+  Already a me!

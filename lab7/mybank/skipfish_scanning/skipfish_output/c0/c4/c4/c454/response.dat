@@ -1,0 +1,52 @@
+HTTP/1.1 302 Found
+Host: 127.0.0.1:8000
+Date: Sun, 09 Dec 2018 22:15:43 +0100
+Connection: close
+X-Powered-By: PHP/7.2.10-0ubuntu0.18.04.1
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+location: index.php
+Content-type: text/html; charset=UTF-8
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RegistrationL</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="header">
+		<h2>Registration</h2>
+	</div>
+
+    <form method="post" action="register.php">
+    
+    
+    
+    <div class="input-group">
+        <label>Username</label>
+        <input type="text" name="username" value="uds">
+    </div>
+    <div class="input-group">
+        <label>Email</label>
+        <input type="email" name="email" value="skipfish@example.com">
+    </div>
+    <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password_1">
+    </div>
+    <div class="input-group">
+        <label>Confirm password</label>
+        <input type="password" name="password_2">
+    </div>
+    <div class="input-group">
+        <button type="submit" class="btn" name="reg_user">Register</button>
+    </div>
+    <p>
+        Already a member? <a href="login.php">Sign in</a>
+    </p>
+</form>
+</body>
+</html>
